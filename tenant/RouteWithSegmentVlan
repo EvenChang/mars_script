@@ -1,0 +1,22 @@
+#!/bin/bash
+export JSON_PATH=`pwd`/json
+export ONOS_IP="192.168.3.1"
+echo "create t1\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1 -d @"$JSON_PATH"t1 --user onos:rocks
+sleep 1
+echo "create s1_10.11\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments -d @"$JSON_PATH"s1_10.11 --user onos:rocks
+sleep 1
+echo "create s2_9.12\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments -d @"$JSON_PATH"s2_9.12 --user onos:rocks
+sleep 1
+echo "create r1s1s2\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t1 -d @"$JSON_PATH"r1s1s2 --user onos:rocks
+sleep 1
+echo "create Policy Router p1"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t1/r1/policy-route -d @"$JSON_PATH"policy1_192.168.1.1 --user onos:rocks
+sleep 1
+echo "create Segment Vlan" 
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments/s1/device/rest:192.168.40.69:80/vlan -d @"$JSON_PATH"vlan --user onos:rocks
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments/s2/device/rest%3A192.168.40.70%3A80/vlan -d @"$JSON_PATH"vlan --user onos:rocks

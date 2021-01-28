@@ -1,0 +1,15 @@
+{
+  "id": "rest:192.168.40.67:80",
+  "name": "even67",
+  "type": "spine",
+  "available": true,
+  "defaultCfg": true,
+  "managementAddress": "192.168.40.67",
+  "mac": "8c-ea-1b-8d-10-d8",
+  "nos": "EdgeCorOS",
+  "mfr": "",
+  "port": "80",
+  "protocol": "rest",
+  "rack_id": "1",
+  "community": "private"
+}

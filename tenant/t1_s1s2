@@ -1,0 +1,11 @@
+#!/bin/bash
+export JSON_PATH=`pwd`/json
+export ONOS_IP="192.168.3.1"
+echo "create t1\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1 -d @"$JSON_PATH"t1 --user onos:rocks
+sleep 1
+echo "create s1_10.11\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments -d @"$JSON_PATH"s1_10.11 --user onos:rocks
+sleep 1
+echo "create s2_9.12\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments -d @"$JSON_PATH"s2_9.12 --user onos:rocks

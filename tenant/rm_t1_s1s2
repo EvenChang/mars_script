@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "Delete t1s1"
+export ONOS_IP="192.168.3.1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1/segments/s1 --user onos:rocks
+
+echo "Delete t1s2"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1/segments/s2 --user onos:rocks
+
+echo "Delete t1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1 --user onos:rocks

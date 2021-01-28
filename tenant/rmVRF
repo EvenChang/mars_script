@@ -1,0 +1,37 @@
+#!/bin/bash
+export ONOS_IP="192.168.3.1"
+echo "Delete Policy1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t1/r1/policy-route/p1 --user onos:rocks
+echo "Delete Policy2"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t2/r2/policy-route/p2 --user onos:rocks
+echo "Delete static1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t1/r1/static-route/s1 --user onos:rocks
+echo "Delete static2"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t2/r2/static-route/s2 --user onos:rocks
+echo "Delete n1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t1/r1/nexthop-group/n1 --user onos:rocks
+echo "Delete n2"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t2/r2/nexthop-group/n2 --user onos:rocks
+echo "Delete r1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t1/r1 --user onos:rocks
+sleep 1
+echo "Delete t1s1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1/segments/s1 --user onos:rocks
+sleep 1
+echo "Delete t1s2"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1/segments/s2 --user onos:rocks
+sleep 1
+echo "Delete t1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1 --user onos:rocks
+sleep 1
+echo "Delete r2"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t2/r2 --user onos:rocks
+sleep 1
+echo "Delete t2s3"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t2/segments/s3 --user onos:rocks
+sleep 1
+echo "Delete t2s4"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t2/segments/s4 --user onos:rocks
+sleep 1
+echo "Delete t2"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t2 --user onos:rocks

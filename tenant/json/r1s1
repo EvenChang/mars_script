@@ -1,0 +1,6 @@
+{   
+   "name": "r1",   
+   "interfaces": [   
+     "s1"   
+   ]   
+}

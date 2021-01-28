@@ -1,0 +1,14 @@
+#!/bin/bash
+export JSON_PATH=`pwd`/json
+export ONOS_IP="192.168.3.1"
+echo "create t2\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://192.168.3.1/mars/v1/tenants/v1 -d @"$JSON_PATH"t2 --user onos:rocks
+sleep 1
+echo "create s3_10.11\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://192.168.3.1/mars/v1/tenants/v1/t2/segments -d @"$JSON_PATH"s3_10.11 --user onos:rocks
+sleep 1
+echo "create s4_9.12\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://192.168.3.1/mars/v1/tenants/v1/t2/segments -d @"$JSON_PATH"s4_9.12 --user onos:rocks
+sleep 1
+echo "create r2s3s4\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://192.168.3.1/mars/tenantlogicalrouter/v1/tenants/t2 -d @"$JSON_PATH"r2s3s4 --user onos:rocks

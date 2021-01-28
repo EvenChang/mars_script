@@ -1,0 +1,15 @@
+{
+  "id": "rest:192.168.3.10:80",
+  "name": "even67",
+  "type": "spine",
+  "available": true,
+  "defaultCfg": true,
+  "managementAddress": "192.168.3.10",
+  "mac": "1c-ea-0b-e0-d1-57",
+  "nos": "Centec",
+  "mfr": "",
+  "port": "80",
+  "protocol": "rest",
+  "rack_id": "1",
+  "community": "private"
+}

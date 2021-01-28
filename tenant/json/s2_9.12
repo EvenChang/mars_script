@@ -1,0 +1,8 @@
+{   
+   "name": "s2",   
+   "type": "vlan",   
+   "ip_address": [   
+     "10.10.9.12"   
+   ],   
+   "value": "12"   
+}

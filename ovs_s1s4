@@ -1,0 +1,11 @@
+#!/bin/bash
+export JSON_PATH=`pwd`/even_json/
+export ONOS_IP="192.168.3.1"
+echo "create ovs\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/devices -d @"$JSON_PATH"ovs_s1 --user onos:rocks
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/devices -d @"$JSON_PATH"ovs_s2 --user onos:rocks
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/devices -d @"$JSON_PATH"ovs_s3 --user onos:rocks
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/devices -d @"$JSON_PATH"ovs_s4 --user onos:rocks

@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Delete r2"
+export ONOS_IP="192.168.3.1"
+curl -X DELETE --header 'Accept: application/json' http://192.168.3.1:8181/mars/tenantlogicalrouter/v1/tenants/t2/r2 --user onos:rocks
+
+echo "Delete t2s3"
+curl -X DELETE --header 'Accept: application/json' http://192.168.3.1:8181/mars/v1/tenants/v1/t2/segments/s3 --user onos:rocks
+
+echo "Delete t2s4"
+curl -X DELETE --header 'Accept: application/json' http://192.168.3.1:8181/mars/v1/tenants/v1/t2/segments/s4 --user onos:rocks
+
+echo "Delete t2"
+curl -X DELETE --header 'Accept: application/json' http://192.168.3.1:8181/mars/v1/tenants/v1/t2 --user onos:rocks

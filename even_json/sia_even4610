@@ -1,0 +1,15 @@
+{
+  "id": "of:00008cea1b4b9040",
+  "name": "even4610",
+  "type": "spine",
+  "available": true,
+  "defaultCfg": true,
+  "managementAddress": "192.168.3.10",
+  "mac": "8c-ea-1b-4b-90-40",
+  "nos": "onl",
+  "mfr": "",
+  "port": "80",
+  "protocol": "of",
+  "rack_id": "1",
+  "community": "private"
+}

@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "Delete policy1"
+export ONOS_IP="192.168.3.1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t1/r1/policy-route/p1 --user onos:rocks
+
+echo "Delete static1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t1/r1/static-route/s1 --user onos:rocks
+
+echo "Delete n1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t1/r1/nexthop-group/n1 --user onos:rocks
+
+echo "Delete r1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/tenantlogicalrouter/v1/tenants/t1/r1 --user onos:rocks
+
+echo "Delete t1s1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1/segments/s1 --user onos:rocks
+
+echo "Delete t1s2"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1/segments/s2 --user onos:rocks
+
+echo "Delete t1"
+curl -X DELETE --header 'Accept: application/json' http://$ONOS_IP:8181/mars/v1/tenants/v1/t1 --user onos:rocks

@@ -1,0 +1,16 @@
+{
+  "name": "p2",
+  "ingress_segments": [
+    "s3"
+  ],
+  "ingress_ports": [
+    "rest:192.168.3.10:80/43"
+  ],
+  "action": "permit",
+  "sequence_no": 1,
+  "protocols": [
+    "tcp"
+  ],
+  "match_ip": "192.168.1.1/32",
+  "nexthop": "10.10.10.101"
+}

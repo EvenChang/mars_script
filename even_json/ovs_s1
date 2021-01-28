@@ -1,0 +1,15 @@
+{
+  "id": "of:0000000000000001",
+  "name": "ovs1",
+  "type": "spine",
+  "available": true,
+  "defaultCfg": false,
+  "managementAddress": "192.168.3.1",
+  "mac": "00-00-00-00-00-01",
+  "nos": "",
+  "mfr": "",
+  "port": "80",
+  "protocol": "of",
+  "rack_id": "1",
+  "community": "private"
+}

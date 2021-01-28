@@ -1,0 +1,43 @@
+#!/bin/bash
+export JSON_PATH=`pwd`/json/
+export ONOS_IP="192.168.3.1"
+echo "create t1\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1 -d @"$JSON_PATH"t1 --user onos:rocks
+sleep 1
+echo "create s1_10.11\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments -d @"$JSON_PATH"s1_10.11 --user onos:rocks
+sleep 1
+echo "create s2_9.12\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments -d @"$JSON_PATH"s2_9.12 --user onos:rocks
+sleep 1
+echo "create r1s1s2\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t1 -d @"$JSON_PATH"r1s1s2 --user onos:rocks
+sleep 1
+echo "create NextHop n1 10.10.10.100"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t1/r1/nexthop-group -d @"$JSON_PATH"n1_10.10.10.100 --user onos:rocks
+sleep 1
+echo "create Static Router s1 192.168.1.1"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t1/r1/static-route -d @"$JSON_PATH"static1_192.168.1.1 --user onos:rocks
+sleep 1
+echo "create Policy Router p1"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t1/r1/policy-route -d @"$JSON_PATH"policy1_192.168.1.1 --user onos:rocks
+sleep 1
+echo "create t2\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1 -d @"$JSON_PATH"t2 --user onos:rocks
+sleep 1
+echo "create s3_10.11\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t2/segments -d @"$JSON_PATH"s3_10.11 --user onos:rocks
+sleep 1
+echo "create s4_9.12\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t2/segments -d @"$JSON_PATH"s4_9.12 --user onos:rocks
+sleep 1
+echo "create r2s3s4\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t2 -d @"$JSON_PATH"r2s3s4 --user onos:rocks
+echo "create NextHop n2 10.10.10.101"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t2/r2/nexthop-group -d @"$JSON_PATH"n2_10.10.10.101 --user onos:rocks
+sleep 1
+echo "create Static Router s2 192.168.1.1"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t2/r2/static-route -d @"$JSON_PATH"static2_192.168.1.1 --user onos:rocks
+sleep 1
+echo "create Policy Router p2"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/tenantlogicalrouter/v1/tenants/t2/r2/policy-route -d @"$JSON_PATH"policy2_192.168.1.1 --user onos:rocks

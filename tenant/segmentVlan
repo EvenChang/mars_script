@@ -1,0 +1,11 @@
+#!/bin/bash
+export JSON_PATH=`pwd`/json/
+export ONOS_IP="192.168.3.1"
+echo "create segment vlan "
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments/s1/device/rest%3A192.168.3.10%3A80/vlan -d @"$JSON_PATH"segmentVlan41 --user onos:rocks
+echo "create segment vlan "
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t1/segments/s2/device/rest%3A192.168.3.10%3A80/vlan -d @"$JSON_PATH"segmentVlan41 --user onos:rocks
+echo "create segment vlan "
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t2/segments/s1/device/rest%3A192.168.3.10%3A80/vlan -d @"$JSON_PATH"segmentVlan41 --user onos:rocks
+echo "create segment vlan "
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/tenants/v1/t2/segments/s2/device/rest%3A192.168.3.10%3A80/vlan -d @"$JSON_PATH"segmentVlan41 --user onos:rocks

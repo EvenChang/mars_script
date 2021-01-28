@@ -1,0 +1,20 @@
+{
+  "id": "rest:192.168.40.69:80",
+  "name": "even69",
+  "type": "leaf",
+  "available": true,
+  "defaultCfg": true,
+  "mgmtIpAddress": "192.168.40.69",
+  "mgmtPort": "0",
+  "mac": "8c-ea-1b-8d-11-22",
+  "nos": "EdgeCOS",
+  "mfr": "",
+  "port": "80",
+  "protocol": "rest",
+  "rack_id": "1",
+  "community": "private",
+  "leaf_group": {
+    "name": "leaf_group1",
+    "switch_port": ""
+  }
+}

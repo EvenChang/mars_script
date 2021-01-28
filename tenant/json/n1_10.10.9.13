@@ -1,0 +1,6 @@
+{
+  "nexthop_group_name": "n1",
+  "ip_addresses": [
+    "10.10.9.13"
+  ]
+}

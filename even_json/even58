@@ -1,0 +1,15 @@
+{
+  "id": "rest:192.168.3.10:80",
+  "name": "even58",
+  "type": "spine",
+  "available": true,
+  "defaultCfg": true,
+  "mgmtIpAddress": "192.168.3.10",
+  "mgmtPort": "0",
+  "mac": "A8-2B-B5-95-A8-5E",
+  "nos": "edgeCos",
+  "mfr": "",
+  "port": "80",
+  "protocol": "rest",
+  "community": "private"
+}

@@ -1,0 +1,5 @@
+#!/bin/bash
+export JSON_PATH=`pwd`/even_json/
+export ONOS_IP="192.168.3.1"
+echo "create even4610\n"
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$ONOS_IP/mars/v1/devices -d @"$JSON_PATH"sia_even4610 --user onos:rocks
